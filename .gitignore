@@ -1,0 +1,249 @@
+# Kaleb.Engineer Website - Professional .gitignore
+# This gitignore covers Jekyll, Swift/Vapor, Docker, and general development tools
+
+# =============================================================================
+# SECRETS & SENSITIVE DATA (CRITICAL - NEVER COMMIT)
+# =============================================================================
+.env
+.env.local
+.env.production
+.env.staging
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+config/secrets.yml
+
+# =============================================================================
+# JEKYLL SITE GENERATION
+# =============================================================================
+jekyll-site/_site/
+jekyll-site/.sass-cache/
+jekyll-site/.jekyll-cache/
+jekyll-site/.jekyll-metadata
+jekyll-site/.bundle/
+jekyll-site/vendor/
+jekyll-site/Gemfile.lock
+
+# Jekyll build artifacts
+.jekyll-cache/
+_site/
+.sass-cache/
+.jekyll-metadata
+
+# =============================================================================
+# SWIFT & VAPOR
+# =============================================================================
+# Swift Package Manager
+vapor-server/.build/
+vapor-server/Packages/
+vapor-server/*.xcodeproj/
+vapor-server/Package.resolved
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.xcscheme
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift build artifacts
+.build/
+Packages/
+Package.resolved
+*.swp
+*.swo
+
+# Vapor specific
+vapor-server/Public/
+vapor-server/Config/secrets/
+vapor-server/Logs/
+
+# =============================================================================
+# DOCKER & CONTAINERIZATION
+# =============================================================================
+# Docker build context
+.dockerignore.bak
+docker-compose.override.yml
+.docker/
+
+# Container logs and data
+logs/
+data/
+volumes/
+
+# =============================================================================
+# NODE.JS & FRONTEND TOOLS (for Jekyll preprocessing)
+# =============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Frontend build artifacts
+dist/
+build/
+.cache/
+
+# =============================================================================
+# DEVELOPMENT TOOLS & EDITORS
+# =============================================================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / AppCode
+.idea/
+*.iml
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# =============================================================================
+# OPERATING SYSTEM FILES
+# =============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# LOGS & TEMPORARY FILES
+# =============================================================================
+*.log
+logs/
+pids/
+*.pid
+*.seed
+*.pid.lock
+tmp/
+temp/
+
+# =============================================================================
+# TESTING & COVERAGE
+# =============================================================================
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Swift testing
+.build-test/
+LinuxMain.swift
+
+# =============================================================================
+# BACKUP & ARCHIVE FILES
+# =============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.zip
+*.tar.gz
+*.rar
+
+# =============================================================================
+# DOCUMENTATION BUILD ARTIFACTS
+# =============================================================================
+docs/_build/
+site/
+
+# =============================================================================
+# MONITORING & ANALYTICS
+# =============================================================================
+# Local analytics data
+analytics/
+metrics/
+
+# =============================================================================
+# PROFESSIONAL DEVELOPMENT NOTES (Optional - keep if desired)
+# =============================================================================
+# Uncomment if you want to keep development notes private
+# TODO.md
+# NOTES.md
+# development-journal.md
+
+# Implementation planning document (contains detailed project roadmap)
+IMPLEMENTATION_PLAN.md
+
+# =============================================================================
+# CI/CD TEMPORARY FILES
+# =============================================================================
+.github/workflows/*.tmp
+.ci/
+.artifacts/
+
+# =============================================================================
+# DATABASE FILES (if using local development databases)
+# =============================================================================
+*.sqlite
+*.sqlite3
+*.db
+data.db
+
+# =============================================================================
+# SSL CERTIFICATES (NEVER COMMIT)
+# =============================================================================
+*.crt
+*.key
+*.pem
+*.p12
+ssl/
+certificates/
+
+# End of .gitignore
