@@ -1,0 +1,62 @@
+title: Kaleb.Engineer
+email: contact@kaleb.engineer
+description: >-
+  Software engineer specializing in Swift & iOS development.
+  Building robust applications with modern architectures.
+baseurl: ""
+url: "https://www.kaleb.engineer"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Sass settings (following Swift.org patterns)
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Site navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Blog
+    url: /blog/
+  - title: Projects
+    url: /projects/
+
+# Social links
+social:
+  github: kalebcooper
+  linkedin: kaleb-cooper
+  email: contact@kaleb.engineer
+
+# SEO settings
+author: Kaleb Cooper
+twitter:
+  username: kalebcooper
+  card: summary

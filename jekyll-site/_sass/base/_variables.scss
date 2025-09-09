@@ -1,0 +1,26 @@
+// Colors (inspired by Swift.org)
+$primary-orange: #FF6B35;
+$dark-gray: #2D2D2D;
+$light-gray: #F7F7F7;
+$medium-gray: #8E8E93;
+$white: #FFFFFF;
+$text-color: #1D1D1F;
+
+// Typography
+$base-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+$code-font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+
+// Font sizes
+$base-font-size: 17px;
+$small-font-size: 14px;
+$large-font-size: 20px;
+
+// Spacing
+$spacing-unit: 16px;
+$content-width: 1200px;
+$on-palm: 768px;
+$on-laptop: 1024px;
+
+// Z-index
+$z-header: 100;
+$z-modal: 1000;

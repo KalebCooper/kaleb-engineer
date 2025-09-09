@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  kaleb-engineer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: kaleb-engineer:latest
+    container_name: kaleb-engineer-app
+    ports:
+      - "8080:8080"
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Development service for Jekyll live reload
+  jekyll-dev:
+    build:
+      context: ../jekyll-site
+      dockerfile: ../docker/Dockerfile.jekyll-dev
+    image: kaleb-engineer-jekyll-dev:latest
+    container_name: kaleb-engineer-jekyll-dev
+    volumes:
+      - ../jekyll-site:/srv/jekyll
+      - jekyll_bundle:/usr/local/bundle
+    ports:
+      - "4000:4000"
+    environment:
+      - JEKYLL_ENV=development
+    profiles:
+      - dev
+    command: ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload", "--force_polling"]
+
+volumes:
+  jekyll_bundle:

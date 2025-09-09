@@ -1,0 +1,42 @@
+# Docker ignore file for kaleb-engineer project
+
+# Git files
+.git
+.gitignore
+
+# Documentation
+*.md
+IMPLEMENTATION_PLAN.md
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Jekyll temporary files
+jekyll-site/_site
+jekyll-site/.sass-cache
+jekyll-site/.jekyll-cache
+jekyll-site/.jekyll-metadata
+jekyll-site/Gemfile.lock
+
+# Vapor build artifacts
+vapor-server/.build
+vapor-server/Package.resolved
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files themselves
+docker/
+*.dockerfile
+docker-compose*.yml
+
+# Environment files (should use env vars instead)
+.env*

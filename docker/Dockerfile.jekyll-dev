@@ -1,0 +1,25 @@
+# Development Dockerfile for Jekyll with live reload
+FROM ruby:3.2-alpine
+
+# Install build dependencies
+RUN apk add --no-cache \
+    build-base \
+    gcompat \
+    nodejs \
+    npm
+
+# Create working directory
+WORKDIR /srv/jekyll
+
+# Install Jekyll and Bundler
+RUN gem install jekyll bundler
+
+# Copy Gemfile for dependency installation
+COPY Gemfile* ./
+RUN bundle install
+
+# Expose Jekyll development port
+EXPOSE 4000
+
+# Default command (can be overridden in docker-compose.yml)
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload"]

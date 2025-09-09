@@ -1,0 +1,61 @@
+// Base layout styles
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0 $spacing-unit;
+    
+    @media screen and (max-width: $on-palm) {
+        padding: 0 ($spacing-unit / 2);
+    }
+}
+
+.page-content {
+    flex: 1;
+    padding: ($spacing-unit * 2) 0;
+}
+
+// Responsive utilities
+@media screen and (max-width: $on-palm) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $on-palm + 1) {
+    .hide-on-desktop {
+        display: none;
+    }
+}
+
+// Grid system
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 (-$spacing-unit / 2);
+}
+
+.col {
+    flex: 1;
+    padding: 0 ($spacing-unit / 2);
+}
+
+.col-half {
+    flex: 0 0 50%;
+    padding: 0 ($spacing-unit / 2);
+    
+    @media screen and (max-width: $on-palm) {
+        flex: 0 0 100%;
+    }
+}
